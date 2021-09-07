@@ -25,6 +25,24 @@ public class NoticeController {
 		return "notice";
 	}
 	
+	@GetMapping("insert")
+	public ModelAndView setInsert()throws Exception{
+		System.out.println("test");
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("board/insert");
+		return mv;
+	}
+	
+	@PostMapping("insert")
+	public ModelAndView setInsert(BoardDTO boardDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = noticeService.setInsert(boardDTO);
+		
+		mv.setViewName("redirect:./list");
+		
+		return mv;
+	}
+	
 	
 //	@RequestMapping(value = "list", method = RequestMethod.GET)
 	@GetMapping("list")
