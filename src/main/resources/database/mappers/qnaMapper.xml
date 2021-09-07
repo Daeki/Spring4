@@ -39,6 +39,10 @@
 			
 		</select>
 		
+		<select id="getSelect" parameterType="BoardDTO" resultType="QnaDTO">
+			SELECT * FROM QNA WHERE NUM=#{num}
+		</select>
+		
 		<insert id="setInsert" parameterType="BoardDTO">
 			INSERT INTO QNA(NUM,TITLE,CONTENTS,WRITER,REGDATE,HITS, REF, STEP, DEPTH)
 			VALUES(QNA_SEQ.NEXTVAL,#{title},#{contents},#{writer},SYSDATE,0, 0, 0, 0)

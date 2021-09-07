@@ -33,7 +33,7 @@ public class NoticeDAO implements BoardDAO {
 	@Override
 	public BoardDTO getSelect(BoardDTO boardDTO) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne(NAMESPACE+"getSelect", boardDTO);
 	}
 
 	@Override

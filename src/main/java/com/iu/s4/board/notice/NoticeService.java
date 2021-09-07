@@ -26,7 +26,7 @@ public class NoticeService implements BoardService {
 	@Override
 	public BoardDTO getSelect(BoardDTO boardDTO) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return noticeDAO.getSelect(boardDTO);
 	}
 
 	@Override
