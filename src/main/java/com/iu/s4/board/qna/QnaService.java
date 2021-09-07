@@ -47,7 +47,21 @@ public class QnaService implements BoardService {
 	}
 	
 	public int setReply(QnaDTO qnaDTO)throws Exception{
-		return 0;
+		//1. 부모의 정보 조회
+		QnaDTO parent = (QnaDTO)qnaDAO.getSelect(qnaDTO);
+		qnaDTO.setRef(parent.getRef());
+		qnaDTO.setStep(parent.getStep()+1);
+		qnaDTO.setDepth(parent.getDepth()+1);
+		
+		//2. update
+		int result = qnaDAO.setReplyUpdate(parent);
+		
+		//3. insert
+		result = qnaDAO.setReply(qnaDTO);
+		
+		
+		
+		return result;
 	}
 
 }

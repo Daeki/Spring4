@@ -36,11 +36,11 @@ public class NoticeController {
 	
 	
 	@GetMapping("insert")
-	public ModelAndView setInsert()throws Exception{
+	public String setInsert()throws Exception{
 		System.out.println("test");
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("board/insert");
-		return mv;
+		return "board/insert";
 	}
 	
 	@PostMapping("insert")

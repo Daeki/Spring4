@@ -34,7 +34,7 @@
 				 	</choose>
 				 	LIKE '%' || #{search} || '%'
 				  	
-			ORDER BY NUM DESC)BK)
+			ORDER BY REF DESC, STEP ASC)BK)
 			WHERE R BETWEEN #{startRow} and #{lastRow}
 			
 		</select>
@@ -45,7 +45,16 @@
 		
 		<insert id="setInsert" parameterType="BoardDTO">
 			INSERT INTO QNA(NUM,TITLE,CONTENTS,WRITER,REGDATE,HITS, REF, STEP, DEPTH)
-			VALUES(QNA_SEQ.NEXTVAL,#{title},#{contents},#{writer},SYSDATE,0, 0, 0, 0)
+			VALUES(QNA_SEQ.NEXTVAL,#{title},#{contents},#{writer},SYSDATE,0, QNA_SEQ.CURRVAL, 0, 0)
+		</insert>
+		
+		<update id="setReplyUpdate" parameterType="QnaDTO">
+			update qna set step=step+1 where ref=#{ref} and step>#{step}
+		</update>
+		
+		<insert id="setReply" parameterType="QnaDTO">
+			INSERT INTO QNA(NUM,TITLE,CONTENTS,WRITER,REGDATE,HITS, REF, STEP, DEPTH)
+			VALUES(QNA_SEQ.NEXTVAL,#{title},#{contents},#{writer},SYSDATE,0, #{ref}, #{step}, #{depth})
 		</insert>
 
   

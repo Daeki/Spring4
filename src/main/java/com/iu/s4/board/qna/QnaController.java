@@ -24,6 +24,24 @@ public class QnaController {
 	public String getBoard() {
 		return "qna";
 	}
+
+	@PostMapping("reply")
+	public ModelAndView setReply(QnaDTO qnaDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = qnaService.setReply(qnaDTO);
+		
+		mv.setViewName("redirect:./list");
+		
+		return mv;
+	}
+	
+	@GetMapping("reply")
+	public ModelAndView setReply()throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("board/reply");
+		return mv;
+	}
+	
 	
 	@GetMapping("select")
 	public ModelAndView getSelect(BoardDTO boardDTO)throws Exception{

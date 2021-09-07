@@ -52,9 +52,13 @@ public class QnaDAO implements BoardDAO {
 		return 0;
 	}
 	
+	public int setReplyUpdate(QnaDTO qnaDTO)throws Exception{
+		return sqlSession.update(NAMESPACE+"setReplyUpdate", qnaDTO);
+	}
+	
 	//답글
 	public int setReply(QnaDTO qnaDTO) throws Exception {
-		return 0;
+		return sqlSession.insert(NAMESPACE+"setReply", qnaDTO);
 	}
 
 }
