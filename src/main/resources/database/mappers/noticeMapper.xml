@@ -4,6 +4,17 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.iu.s4.board.notice.NoticeDAO">
+  		<select id="getCount" resultType="Long" parameterType="Pager">
+  			SELECT COUNT(num) FROM NOTICE
+  			
+  			<if test="kind == 'k1'">WHERE title LIKE '%' || #{search} || '%'</if>
+  			<if test="kind == 'k2'">WHERE contents LIKE '%' || #{search} || '%'</if>
+  			<if test="kind == 'k3'">WHERE writer LIKE '%' || #{search} || '%'</if>
+  			
+  			
+  		</select>
+  
+  
 		<select id="getList" resultType="NoticeDTO" parameterType="Pager">
 			SELECT * FROM
 			(SELECT ROWNUM R, BK.* FROM

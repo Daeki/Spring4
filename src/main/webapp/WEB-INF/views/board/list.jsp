@@ -14,6 +14,24 @@
 	<h1>List Page</h1>
 
 <div class="col-md-7 my-2 mx-auto">	
+		<!-- search Form Start-->
+		<form action="./list" method="get">
+		
+		 <div class="input-group mb-3" >
+		  <select name="kind" class="form-select form-select-sm" aria-label=".form-select-sm example">
+			  <option value="k1">Title</option>
+			  <option value="k2">Contents</option>
+			  <option value="k3">Writer</option>
+		  </select>
+		  
+		  <input type="text" name="search" class="form-control" aria-label="Text input with dropdown button">
+		  <button type="submit" class="btn btn-outline-secondary">Search</button>
+		</div>
+			
+		</form>
+
+
+
 	<table class="table">
 	  <thead>
 	    <tr>
@@ -37,9 +55,38 @@
 	  </tbody>
 	</table>
 	
-	<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="n">
-		<a href="./list?pn=${n}">${n}</a>
-	</c:forEach>
+<!-- Pageing -->
+		<nav aria-label="Page navigation example">
+		  <ul class="pagination">
+		    <li class="page-item">
+		      <a class="page-link" href="./list?kind=${pager.kind}&search=${pager.search}" aria-label="Previous">
+		        <span aria-hidden="true">&laquo;</span>
+		      </a>
+		    </li>
+		    
+		   	<li class="page-item">
+		      <a class="page-link" href="./list?pn=${pager.startNum-1}&kind=${pager.kind}&search=${pager.search}" aria-label="Previous">
+		        <span aria-hidden="true">&lt;</span>
+		      </a>
+		    </li>
+		    
+			<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="n">
+				<li class="page-item"><a class="page-link" href="./list?pn=${n}&kind=${pager.kind}&search=${pager.search}">${n}</a></li>
+			</c:forEach>
+			
+			<li class="page-item">
+		      <a class="page-link" href="./list?pn=${pager.lastNum+1}&kind=${pager.kind}&search=${pager.search}" aria-label="Next">
+		        <span aria-hidden="true">&gt;</span>
+		      </a>
+		    </li>
+		   
+		    <li class="page-item">
+		      <a class="page-link" href="./list?pn=${pager.totalPage}&kind=${pager.kind}&search=${pager.search}" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		      </a>
+		    </li>
+		  </ul>
+		</nav>
 	
 	
 	 <a href="./insert" class="btn btn-secondary">ADD</a>

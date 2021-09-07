@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.iu.s4.board.BoardDTO;
 import com.iu.s4.board.BoardService;
+import com.iu.s4.util.Pager;
 
 @Service
 public class NoticeService implements BoardService {
@@ -14,9 +15,12 @@ public class NoticeService implements BoardService {
 	private NoticeDAO noticeDAO;
 
 	@Override
-	public List<BoardDTO> getList() throws Exception {
-		// TODO Auto-generated method stub
-		return noticeDAO.getList();
+	public List<BoardDTO> getList(Pager pager) throws Exception {
+		Long totalCount = noticeDAO.getCount(pager);
+		pager.makeNum(totalCount);
+		pager.makeRow();
+		
+		return noticeDAO.getList(pager);
 	}
 
 	@Override
