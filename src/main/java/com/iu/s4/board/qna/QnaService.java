@@ -48,6 +48,7 @@ public class QnaService implements BoardService {
 	
 	public int setReply(QnaDTO qnaDTO)throws Exception{
 		//1. 부모의 정보 조회
+		System.out.println("Num : "+qnaDTO.getNum());
 		QnaDTO parent = (QnaDTO)qnaDAO.getSelect(qnaDTO);
 		qnaDTO.setRef(parent.getRef());
 		qnaDTO.setStep(parent.getStep()+1);
