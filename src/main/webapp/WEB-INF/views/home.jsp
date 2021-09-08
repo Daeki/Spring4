@@ -6,15 +6,35 @@
 	<script type="text/javascript">
 		alert('Hellow world');
 	</script>
+	<link href="./resources/css/home.css" rel="stylesheet">
 </head>
 <body>
-<h1>
+<h1 class="c1">
 	Hello world!  
 </h1>
 
+<h1 id="d1">
+	Other H1
+</h1>
+
+<div id="d2">
+	<h3>In DIV</h3>
+</div>
+
+<img class="c1" id="d3" alt="" src="./resources/images/iu2.jpg">
+
+<div>
+	<button onClick="fn1()">CLICK</button>
+</div>
+
+
+
+
 <P>  The time on the server is ${serverTime}. </P>
+<script type="text/javascript" src="./resources/js/function_1.js"></script>
 <script type="text/javascript">
 	console.log('body Script');
 </script>
+<!-- <script type="text/javascript" src="./resources/js/home.js"></script> -->
 </body>
 </html>
