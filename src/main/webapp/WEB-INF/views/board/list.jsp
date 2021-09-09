@@ -43,10 +43,10 @@
 	    </tr>
 	  </thead>
 	  <tbody>
-	  	<c:forEach items="${list}" var="dto">
+	  	<c:forEach items="${list}" var="dto" varStatus="i">
 		    <tr>
 		      <th scope="row">${dto.num}</th>
-		      <td><a href="./select?num=${dto.num}">
+		      <td><span class="c1" id="${i.index}" >
 		      
 		      <c:catch>
 			      <c:forEach begin="1" end="${dto.depth}">
@@ -54,8 +54,8 @@
 			      </c:forEach>
 		      </c:catch>
 		      
-		      ${dto.title}</a></td>
-		      <td>${dto.writer}</td>
+		      ${dto.title}</span></td>
+		      <td id="w${i.index}">${dto.writer}</td>
 		      <td>${dto.regDate}</td>
 		      <td>${dto.hits}</td>
 		    </tr>
@@ -98,8 +98,9 @@
 	
 	
 	 <a href="./insert" class="btn btn-secondary">ADD</a>
+	 <button id="btn">CLICK</button>
 </div>	
 	
-	
+<script type="text/javascript" src="../resources/js/list.js"></script>	
 </body>
 </html>
