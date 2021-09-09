@@ -46,7 +46,7 @@
 	  	<c:forEach items="${list}" var="dto" varStatus="i">
 		    <tr>
 		      <th scope="row">${dto.num}</th>
-		      <td><span class="c1" id="${i.index}" >
+		      <td><span class="c1" data-writer-num="${i.index}" >
 		      
 		      <c:catch>
 			      <c:forEach begin="1" end="${dto.depth}">

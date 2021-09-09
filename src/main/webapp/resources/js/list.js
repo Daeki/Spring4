@@ -10,7 +10,10 @@
  
  for(let s of c1){
 	s.addEventListener('click', function(){
-		let num = s.id;
+		//data-writer-num
+		//dataset.wirterNum
+		let num = s.dataset.writerNum;
+		
 		num = document.getElementById('w'+num);
 		alert(num.innerHTML);
 	});
