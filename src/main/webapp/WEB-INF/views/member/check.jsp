@@ -15,46 +15,43 @@
 
 <div class="container-fluid">
 	<div class="form-check">
-	  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-	  <label class="form-check-label" for="flexCheckDefault">
+	  <input class="form-check-input" type="checkbox" value="" id="all">
+	  <label class="form-check-label" for="all">
 	    Check ALL
 	  </label>
 	</div>
 	
 	<div class="form-check">
-	  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-	  <label class="form-check-label" for="flexCheckDefault">
-	    약관1
-	  </label>
-	</div>
-		<div class="form-check">
-	  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+	  <input class="form-check-input checks" type="checkbox" value="" id="flexCheckDefault">
 	  <label class="form-check-label" for="flexCheckDefault">
 	    약관1
 	  </label>
 	</div>
 	<div class="form-check">
-	  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+	  <input class="form-check-input checks" type="checkbox" value="" id="flexCheckDefault">
 	  <label class="form-check-label" for="flexCheckDefault">
 	    약관2
 	  </label>
 	</div>
 	<div class="form-check">
-	  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+	  <input class="form-check-input checks" type="checkbox" value="" id="flexCheckDefault">
 	  <label class="form-check-label" for="flexCheckDefault">
 	    약관3
 	  </label>
 	</div>
 	<div class="form-check">
-	  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+	  <input class="form-check-input checks" type="checkbox" value="" id="flexCheckDefault">
 	  <label class="form-check-label" for="flexCheckDefault">
-	    약관4
+	    약관4(광고성)
 	  </label>
 	</div>
 
+	<button id="btn">회원가입</button>
+	<!-- <a href="./join" id="btn">회원가입</a> -->
 
 </div>
 
+<script type="text/javascript" src="../resources/js/member.js"></script>
 
 </body>
 </html>

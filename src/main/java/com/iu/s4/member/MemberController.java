@@ -9,6 +9,13 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/member/**")
 public class MemberController {
 	
+	@GetMapping("join")
+	public ModelAndView join()throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("member/join");
+		return mv;
+	}
+	
 	
 	@GetMapping("check")
 	public ModelAndView check()throws Exception{
