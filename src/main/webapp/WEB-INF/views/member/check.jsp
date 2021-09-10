@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원가입</title>
 <c:import url="../temp/boot_head.jsp"></c:import>
 </head>
 <body>
@@ -22,19 +22,19 @@
 	</div>
 	
 	<div class="form-check">
-	  <input class="form-check-input checks" type="checkbox" value="" id="flexCheckDefault">
+	  <input class="form-check-input checks ch" type="checkbox" value="" id="flexCheckDefault">
 	  <label class="form-check-label" for="flexCheckDefault">
 	    약관1
 	  </label>
 	</div>
 	<div class="form-check">
-	  <input class="form-check-input checks" type="checkbox" value="" id="flexCheckDefault">
+	  <input class="form-check-input checks ch" type="checkbox" value="" id="flexCheckDefault">
 	  <label class="form-check-label" for="flexCheckDefault">
 	    약관2
 	  </label>
 	</div>
 	<div class="form-check">
-	  <input class="form-check-input checks" type="checkbox" value="" id="flexCheckDefault">
+	  <input class="form-check-input checks ch" type="checkbox" value="" id="flexCheckDefault">
 	  <label class="form-check-label" for="flexCheckDefault">
 	    약관3
 	  </label>
