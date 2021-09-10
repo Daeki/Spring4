@@ -15,5 +15,12 @@
 
 <P>  The time on the server is ${serverTime}. </P>
 
+	<c:if test="${not empty member}"> 
+	<h3>Login이 성공 했을때 보이는 문장</h3>
+	</c:if>
+	
+	<c:if test="${empty member}">
+	<h3>Login을 하기전 보이는 문장</h3>
+	</c:if>
 </body>
 </html>

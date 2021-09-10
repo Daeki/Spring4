@@ -39,7 +39,7 @@
   
   <div class="mb-3">
     <label for="text" class="form-label">Phone</label>
-    <input type="text" class="form-control put" id="phone" placeholder="01012345678">
+    <input type="tel" class="form-control put" id="phone" placeholder="01012345678">
   <!--   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
   </div>
   

@@ -11,6 +11,10 @@ public class MemberDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE="com.iu.s4.member.MemberDAO.";
 	
+	public MemberDTO getLogin(MemberDTO memberDTO)throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"getLogin", memberDTO);
+	}
+	
 	public MemberDTO getIdCheck(MemberDTO memberDTO)throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"getIdCheck", memberDTO);
 	}
