@@ -15,7 +15,8 @@
   
   <div class="mb-3">
     <label for="text" class="form-label">ID</label>
-    <input type="text" class="form-control put" id="id">
+    <input type="text" class="form-control put" id="id"> 
+    <button type="button" id="idCheck">ID중복확인</button>
 	<div id="idResult"></div>    
   </div>
   
