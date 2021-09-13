@@ -7,11 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../temp/boot_head.jsp"></c:import>
-<style type="text/css">
-	#f {
-		display: none;
-	}
-</style>
+
 </head>
 <body>
 <c:import url="../temp/boot_nav.jsp"></c:import>
@@ -54,14 +50,15 @@
   <!--   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
   </div>
   
-   <div class="mb-3 my-4">
+   <div class="mb-3 my-4" id="files">
     <label class="form-label"></label>
   	<button id="add" type="button" class="btn btn-info">File Add</button>
+  	
   </div>
   
   <!-- input file 추가 영역 -->
   <div id="addResult">
-  
+  	
   </div>
   
   

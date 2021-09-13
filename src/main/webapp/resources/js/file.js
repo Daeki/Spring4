@@ -9,5 +9,5 @@
  
  
  $('#add').click(function(){
-	alert('add');
+	$("#files").after(file);
 });
