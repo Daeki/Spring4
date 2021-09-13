@@ -7,6 +7,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../temp/boot_head.jsp"></c:import>
+<style type="text/css">
+	#f {
+		display: none;
+	}
+</style>
 </head>
 <body>
 <c:import url="../temp/boot_nav.jsp"></c:import>
@@ -51,11 +56,27 @@
   
    <div class="mb-3 my-4">
     <label class="form-label"></label>
+  	<button id="add" type="button" class="btn btn-info">File Add</button>
+  </div>
+  
+  <!-- input file 추가 영역 -->
+  <div id="addResult">
+  
+  </div>
+  
+  
+  
+   <div class="mb-3 my-4">
+    <label class="form-label"></label>
   	<button id="btn" type="button" class="btn btn-primary">Join</button>
-    
   </div>
   
 </form>
+  <div class="mb-3" id="f">
+    <label for="photo" class="form-label">Photo</label>
+    <input type="file" class="form-control put" id="photo" name="photo" aria-describedby="emailHelp">
+  </div>
 <script type="text/javascript" src="../resources/js/join.js"></script>
+<script type="text/javascript" src="../resources/js/file.js"></script>
 </body>
 </html>
