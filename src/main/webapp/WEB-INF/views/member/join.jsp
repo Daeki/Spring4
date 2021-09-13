@@ -15,37 +15,37 @@
   
   <div class="mb-3">
     <label for="text" class="form-label">ID</label>
-    <input type="text" class="form-control put" id="id"> 
+    <input type="text" class="form-control put" id="id" name="id"> 
     <button type="button" id="idCheck">ID중복확인</button>
 	<div id="idResult"></div>    
   </div>
   
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control put pw" id="pw1">
+    <input type="password" class="form-control put pw" id="pw1" name="pw">
   </div>
 
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password 확인</label>
-    <input type="password" class="form-control put pw" id="pw2" placeholder="password를 한번더 입력하세요">
+    <input type="password" class="form-control put pw" id="pw2" name="pwCheck" placeholder="password를 한번더 입력하세요">
   	<div id="warnPw" style="color:red;"></div>
   </div>
   
   <div class="mb-3">
     <label for="text" class="form-label">Name</label>
-    <input type="text" class="form-control put" id="name">
+    <input type="text" class="form-control put" id="name" name="name">
   <!--   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
   </div>
   
   <div class="mb-3">
     <label for="text" class="form-label">Phone</label>
-    <input type="tel" class="form-control put" id="phone" placeholder="01012345678">
+    <input type="tel" class="form-control put" id="phone" name="phone" placeholder="01012345678">
   <!--   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
   </div>
   
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input type="email" class="form-control put" id="email" aria-describedby="emailHelp" placeholder="email@email.com">
+    <input type="email" class="form-control put" id="email" name="email" aria-describedby="emailHelp" placeholder="email@email.com">
   <!--   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
   </div>
   
