@@ -26,6 +26,16 @@
 	<h1>Conflict</h1>
 
 	<h1>Member Branch</h1>
+	
+	<button id="btn">CLICK</button>
+	
+	<script type="text/javascript">
+
+		$("#btn").click(function(){
+			alert('alert');
+		});	
+	
+	</script>
 
 </body>
 </html>
