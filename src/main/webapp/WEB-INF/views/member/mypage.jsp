@@ -14,7 +14,8 @@
 	<a href="#" id="del">탈퇴</a>
 	
 	<script type="text/javascript">
-		const del = document.getElementById("del");
+		/* const del = document.getElementById("del"); */
+		const del = document.querySelector("#del");
 		del.addEventListener('click', function () {
 			let result= confirm('Delete????');
 			if(result){

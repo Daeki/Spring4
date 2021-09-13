@@ -12,6 +12,6 @@
 </head>
 <body>
 	<input type="hidden" id="msg" value="${msg}">
-<script type="text/javascript" src="../resources/js/result.js"></script>
+
 </body>
 </html>
