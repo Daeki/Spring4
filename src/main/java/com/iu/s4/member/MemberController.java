@@ -16,6 +16,34 @@ public class MemberController {
 	
 	@Autowired
 	private MemberService memberService;
+
+	@PostMapping("update")
+	public ModelAndView setUpdate(MemberDTO memberDTO, HttpSession session)throws Exception{
+		//수정전 데이터
+		MemberDTO sessionDTO = (MemberDTO)session.getAttribute("member");
+		
+		//수정후 데이터
+		memberDTO.setId(sessionDTO.getId());
+		
+		int result = memberService.setUpdate(memberDTO);
+		
+		memberDTO.setName(sessionDTO.getName());
+		
+		session.setAttribute("member", memberDTO);
+		
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:../");
+		return mv;
+	}
+	
+	
+	@GetMapping("update")
+	public ModelAndView setUpdate()throws Exception{
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("member/update");
+		return mv;
+	}
 	
 	
 	@GetMapping("delete")
