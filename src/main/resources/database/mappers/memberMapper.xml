@@ -4,6 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.iu.s4.member.MemberDAO">
+  	<insert id="setFileInsert" parameterType="MemberFilesDTO">
+  		insert into memberFiles (num, id, fileName, oriName)
+  		values(files_seq.nextval, #{id}, #{fileName}, #{oriName})
+  	</insert>
+  
   	<update id="setUpdate" parameterType="MemberDTO">
   		update member set pw=#{pw}, phone=#{phone}, email=#{email} where id=#{id}
   	</update>

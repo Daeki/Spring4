@@ -123,15 +123,7 @@ public class MemberController {
 	
 	@PostMapping("join")
 	public ModelAndView join(MemberDTO memberDTO,MultipartFile photo, HttpSession session)throws Exception{
-		
-		String original = photo.getOriginalFilename();
-		String name = photo.getName();
-		long size = photo.getSize();
-		
-		
-		System.out.println("Original : "+original);
-		System.out.println("Name : "+name);
-		System.out.println("FileSize : "+size);
+
 		
 		ModelAndView mv = new ModelAndView();
 		int result = memberService.setJoin(memberDTO, photo, session);

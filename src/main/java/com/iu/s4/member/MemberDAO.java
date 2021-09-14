@@ -19,6 +19,10 @@ public class MemberDAO {
 		return sqlSession.delete(NAMESPACE+"setDelete", memberDTO);
 	}
 	
+	public int setFileInsert(MemberFilesDTO memberFilesDTO)throws Exception{
+		return sqlSession.insert(NAMESPACE+"setFileInsert", memberFilesDTO);
+	}
+	
 	public int setJoin(MemberDTO memberDTO)throws Exception{
 		return sqlSession.insert(NAMESPACE+"setJoin", memberDTO);
 	}
