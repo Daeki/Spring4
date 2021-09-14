@@ -7,6 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../temp/boot_head.jsp"></c:import>
+<style type="text/css">
+	#d1 {
+		width: 300px;
+		height: 300px;
+		background-color: yellow;
+	}
+</style>
 </head>
 <body>
 <c:import url="../temp/boot_nav.jsp"></c:import>
@@ -30,11 +37,36 @@
 		   <label for="exampleFormControlTextarea1" class="form-label">Contents</label>
   			<textarea class="form-control" cols=""  name="contents" id="exampleFormControlTextarea1" rows="6"></textarea>
 		  </div>
+		 <!-- button 추가 -->
+		 <button type="button" id="fileAdd" class="btn btn-primary">FileADD</button>
+		<button type="button" class="del">Delete</button>
+		<div id="fileAddResult">
+		
+		</div>	
+		 
 		 	
 		  <button type="submit" class="btn btn-primary">ADD</button>
 		</form>
-	
+		
+</div>
+<div id="d1">
+	<button id="c1">CLICK</button>
 </div>
 
+<script type="text/javascript" src="../resources/js/boardFile.js">
+	//코드작성 금지
+</script>
+<script type="text/javascript">
+
+
+
+	$("#d1").click(function () {
+		alert('d1');
+	});
+	
+	$("#c1").click(function() {
+		alert('c1');
+	});
+</script>
 </body>
 </html>
