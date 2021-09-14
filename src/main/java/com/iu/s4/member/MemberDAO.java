@@ -11,6 +11,11 @@ public class MemberDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE="com.iu.s4.member.MemberDAO.";
 	
+	
+	public MemberFilesDTO getFile(MemberDTO memberDTO)throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"getFile", memberDTO);
+	}
+	
 	public int setUpdate(MemberDTO memberDTO)throws Exception{
 		return sqlSession.update(NAMESPACE+"setUpdate", memberDTO);
 	}

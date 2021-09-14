@@ -16,6 +16,10 @@ public class MemberService {
 	@Autowired
 	private MemberDAO memberDAO;
 	
+	public MemberFilesDTO getFile(MemberDTO memberDTO)throws Exception{
+		return memberDAO.getFile(memberDTO);
+	}
+	
 	public int setUpdate(MemberDTO memberDTO)throws Exception{
 		return memberDAO.setUpdate(memberDTO);
 	}
