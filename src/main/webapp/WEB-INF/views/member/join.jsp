@@ -12,7 +12,7 @@
 <body>
 <c:import url="../temp/boot_nav.jsp"></c:import>
 	<h1 class="col-md-6 mx-auto my-5">Join Page</h1>
-	<form id="frm" action="join" method="post"  class="col-md-6 mx-auto" >
+	<form id="frm" action="join" method="post" enctype="multipart/form-data"  class="col-md-6 mx-auto" >
   
   <div class="mb-3">
     <label for="text" class="form-label">ID</label>
@@ -50,30 +50,20 @@
   <!--   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
   </div>
   
-   <div class="mb-3 my-4" id="files">
-    <label class="form-label"></label>
-  	<button id="add" type="button" class="btn btn-info">File Add</button>
-  	
-  </div>
   
-  <!-- input file 추가 영역 -->
-  <div id="addResult">
-  	
-  </div>
-  
-  
-  
-   <div class="mb-3 my-4">
-    <label class="form-label"></label>
-  	<button id="btn" type="button" class="btn btn-primary">Join</button>
-  </div>
-  
-</form>
   <div class="mb-3" id="f">
     <label for="photo" class="form-label">Photo</label>
     <input type="file" class="form-control put" id="photo" name="photo" aria-describedby="emailHelp">
   </div>
-<script type="text/javascript" src="../resources/js/join.js"></script>
-<script type="text/javascript" src="../resources/js/file.js"></script>
+  
+  
+   <div class="mb-3 my-4">
+    <label class="form-label"></label>
+  	<button id="btn" type="submit" class="btn btn-primary">Join</button>
+  </div>
+  
+</form>
+<!-- <script type="text/javascript" src="../resources/js/join.js"></script>
+<script type="text/javascript" src="../resources/js/file.js"></script> -->
 </body>
 </html>
