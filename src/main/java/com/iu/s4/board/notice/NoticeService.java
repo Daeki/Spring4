@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.iu.s4.board.BoardDTO;
+import com.iu.s4.board.BoardFilesDTO;
 import com.iu.s4.board.BoardService;
 import com.iu.s4.util.FileManager;
 import com.iu.s4.util.Pager;
@@ -48,14 +49,26 @@ public class NoticeService implements BoardService {
 		System.out.println(realPath);
 		File file = new File(realPath);
 		
+		System.out.println("Before Num : "+boardDTO.getNum());
+		
+		int result = noticeDAO.setInsert(boardDTO);
+		
+		System.out.println("After Num : "+boardDTO.getNum());
+		
 		for(MultipartFile multipartFile:files) {
 			String fileName = fileManager.fileSave(multipartFile, file);
 			System.out.println(fileName);
+			BoardFilesDTO boardFilesDTO = new BoardFilesDTO();
+			boardFilesDTO.setFileName(fileName);
+			boardFilesDTO.setOriName(multipartFile.getOriginalFilename());
+			boardFilesDTO.setNum(boardDTO.getNum());
+			
+			result = noticeDAO.setFile(boardFilesDTO);
 		}
 		
 		
 		
-		return 0;// noticeDAO.setInsert(boardDTO);
+		return result;// noticeDAO.setInsert(boardDTO);
 	}
 
 	@Override

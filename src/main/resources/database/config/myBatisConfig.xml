@@ -6,7 +6,7 @@
   <configuration>
   	<typeAliases>
   		<typeAlias type="com.iu.s4.board.BoardDTO" alias="BoardDTO"/>
-  		<typeAlias type="com.iu.s4.board.BoardFiledDTO" alias="BoardFilesDTO"/>
+  		<typeAlias type="com.iu.s4.board.BoardFilesDTO" alias="BoardFilesDTO"/>
   		<typeAlias type="com.iu.s4.board.notice.NoticeDTO" alias="NoticeDTO"/>
   		<typeAlias type="com.iu.s4.board.qna.QnaDTO" alias="QnaDTO"/>
   		<typeAlias type="com.iu.s4.member.MemberDTO" alias="MemberDTO"/>
