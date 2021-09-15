@@ -50,6 +50,10 @@
 		<update id="setHitUpdate" parameterType="BoardDTO">
 			update notice set hits= hits+1 where num=#{num}
 		</update>
+	
+		<select id="getFiles" parameterType="BoardDTO" resultType="BoardFilesDTO">
+			select * from noticefiles where num=#{num}
+		</select>
 
 	
 		<insert id="setInsert" parameterType="BoardDTO">

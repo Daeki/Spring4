@@ -24,6 +24,10 @@ public class NoticeService implements BoardService {
 	private ServletContext servletContext;
 	@Autowired
 	private FileManager fileManager;
+	
+	public List<BoardFilesDTO> getFiles(BoardDTO boardDTO)throws Exception{
+		return noticeDAO.getFiles(boardDTO);
+	}
 
 	@Override
 	public List<BoardDTO> getList(Pager pager) throws Exception {
@@ -37,6 +41,9 @@ public class NoticeService implements BoardService {
 	@Override
 	public BoardDTO getSelect(BoardDTO boardDTO) throws Exception {
 		// TODO Auto-generated method stub
+		
+		//List<BoardFilesDTO> ar = noticeDAO.getFiles(boardDTO);
+		
 		noticeDAO.setHitUpdate(boardDTO);
 		return noticeDAO.getSelect(boardDTO);
 	}
