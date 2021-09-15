@@ -4,7 +4,7 @@
  */
  
   let files = '<div class="input-group mb-3">';
- files = files + '<input type="file" class="form-control">';
+ files = files + '<input type="file" name="files" class="form-control">';
  files = files + '  <button class="btn btn-outline-secondary del" type="button">X</button>';
  files = files + '</div>';
  let count=0;

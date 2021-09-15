@@ -22,7 +22,7 @@
 
 <div class="container-fluid">
 	
-		<form class="col-md-6 mx-auto" action="./insert" method="post" >
+		<form class="col-md-6 mx-auto" action="./insert" method="post" enctype="multipart/form-data">
 		  <div class="mb-3">
 		    <label for="title" class="form-label">TITLE</label>
 		    <input type="text" class="form-control" name="title" id="title" placeholder="Enter Title">
