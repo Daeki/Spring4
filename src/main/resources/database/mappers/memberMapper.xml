@@ -22,7 +22,7 @@
   	<select id="getLogin" parameterType="MemberDTO" resultMap="getLoginResult">
   		SELECT *
 		FROM MEMBER M
-		     INNER JOIN
+		     LEFT JOIN
 		     MEMBERFILES MF
 		USING (ID)     
 		WHERE ID=#{id} AND PW=#{pw}
