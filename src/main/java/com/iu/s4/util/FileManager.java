@@ -10,6 +10,10 @@ import org.springframework.web.multipart.MultipartFile;
 @Component
 public class FileManager {
 	//fileDelete
+	public void fileDelete(File file)throws Exception{
+		
+		file.delete();
+	}
 	
 	//fileSave
 	//파일 저장
