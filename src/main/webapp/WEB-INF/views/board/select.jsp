@@ -30,6 +30,26 @@
 		<a href="./down?fileName=${f.fileName}">${f.oriName}</a>	
 		</div>
 	</c:forEach>
+	
+	<hr>
+	<div>
+		<div class="mb-3">
+		    <label for="writer" class="form-label">Writer</label>
+		    <input type="text" class="form-control" readonly="readonly" value="${member.id}" name="writer" id="writer" placeholder="Enter Writer">
+		  </div>
+		  
+		  <div class="mb-3">
+		   <label for="contents" class="form-label">Contents</label>
+  			<textarea class="form-control" cols=""  name="contents" id="contents" rows="6"></textarea>
+		  </div>
+		 
+		 <button type="button" id="comment" class="btn btn-primary">WRITE</button>
+	</div>
+	
+	
+	
+	<hr>
+	
 		
 	
 	<c:if test="${not empty member and member.id eq dto.writer}">
@@ -41,7 +61,17 @@
 		<a href="./reply?num=${dto.num}">REPLY</a>
 	</c:if>
 	</div>
-	
+
+<script type="text/javascript">
+	$("#comment").click(function(){
+		let writer = $("#writer").val();
+		let contents = $("#contents").val();
+		$.post('./comment', {num:'${dto.num}', writer:writer, contents:contents}, function(result){
+			console.log(result.trim());
+		});
+		
+	});
+</script>	
 	
 
 </body>
