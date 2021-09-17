@@ -27,12 +27,16 @@
 
 	<h1>Member Branch</h1>
 	
+	<h1 id="ar"></h1>
 	<button id="btn">CLICK</button>
 	
 	<script type="text/javascript">
 
 		$("#btn").click(function(){
-			alert('alert');
+			$.get("./ajax/t1?num=1", function (result) {
+				console.log(result.trim());
+				$('#ar').html(result.trim());
+			});
 		});	
 	
 	</script>
