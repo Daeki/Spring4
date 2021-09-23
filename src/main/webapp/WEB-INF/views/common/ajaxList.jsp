@@ -19,31 +19,31 @@
 		<nav aria-label="Page navigation example">
 		  <ul class="pagination">
 		    <li class="page-item">
-		      <span class="page-link" aria-label="Previous">
+		      <span class="page-link more" data-comment-pn="1" aria-label="Previous">
 		        <span aria-hidden="true">&laquo;</span>
 		      </span>
 		    </li>
 		    
 		   	<li class="page-item">
-		      <span class="page-link" aria-label="Previous">
+		      <span class="page-link more" data-comment-pn="${pager.startNum-1}" aria-label="Previous">
 		        <span aria-hidden="true">&lt;</span>
 		      </span>
 		    </li>
 		    
 			<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="n">
 				<li class="page-item">
-				<span class="page-link"">${n}</span>
+				<span class="page-link more" data-comment-pn="${n}">${n}</span>
 				</li>
 			</c:forEach>
 			
 			<li class="page-item">
-		      <span class="page-link" aria-label="Next">
+		      <span class="page-link more" data-comment-pn="${pager.lastNum+1}" aria-label="Next">
 		        <span aria-hidden="true">&gt;</span>
 		      </span>
 		    </li>
 		   
 		    <li class="page-item">
-		      <span class="page-link" aria-label="Next">
+		      <span class="page-link more" data-comment-pn="${pager.totalPage}" aria-label="Next">
 		        <span aria-hidden="true">&raquo;</span>
 		      </span>
 		    </li>

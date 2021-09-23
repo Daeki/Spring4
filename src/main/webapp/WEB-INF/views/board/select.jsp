@@ -7,6 +7,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <c:import url="../temp/boot_head.jsp"></c:import>
+<style type="text/css">
+	.more {
+		cursor: pointer;
+	}
+</style>
 </head>
 <body>
 <c:import url="../temp/boot_nav.jsp"></c:import>
@@ -70,15 +75,24 @@
 	</div>
 
 <script type="text/javascript">
-	getCommentList();
+	getCommentList(1);
+	
+	$("#commentList").on("click", ".more", function(){
+		//data-comment-pn 값을 출력
+		let pn = $(this).attr("data-comment-pn");
+		getCommentList(pn);
+	});
 	
 	
-	function getCommentList() {
+	function getCommentList(pageNumber) {
 		let num = $("#commentList").attr("data-board-num");
 		$.ajax({
 			type: "GET",
 			url : "./getCommentList",
-			data: {num:num},
+			data: {
+				num:num,
+				pn : pageNumber	
+			},
 			success: function(result){
 				result=result.trim();
 				$("#commentList").html(result);
