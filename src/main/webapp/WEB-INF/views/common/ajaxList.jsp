@@ -14,3 +14,38 @@
 
 </c:forEach>
 </table>
+
+<!-- Pageing -->
+		<nav aria-label="Page navigation example">
+		  <ul class="pagination">
+		    <li class="page-item">
+		      <span class="page-link" aria-label="Previous">
+		        <span aria-hidden="true">&laquo;</span>
+		      </span>
+		    </li>
+		    
+		   	<li class="page-item">
+		      <span class="page-link" aria-label="Previous">
+		        <span aria-hidden="true">&lt;</span>
+		      </span>
+		    </li>
+		    
+			<c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="n">
+				<li class="page-item">
+				<span class="page-link"">${n}</span>
+				</li>
+			</c:forEach>
+			
+			<li class="page-item">
+		      <span class="page-link" aria-label="Next">
+		        <span aria-hidden="true">&gt;</span>
+		      </span>
+		    </li>
+		   
+		    <li class="page-item">
+		      <span class="page-link" aria-label="Next">
+		        <span aria-hidden="true">&raquo;</span>
+		      </span>
+		    </li>
+		  </ul>
+		</nav>

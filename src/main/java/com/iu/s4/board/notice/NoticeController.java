@@ -28,11 +28,12 @@ public class NoticeController {
 		return "notice";
 	}
 	@GetMapping("getCommentList")
-	public ModelAndView getCommentList(CommentsDTO commentsDTO)throws Exception{
+	public ModelAndView getCommentList(CommentsDTO commentsDTO, Pager pager)throws Exception{
 		commentsDTO.setBoard("N");
-		List<CommentsDTO> ar = noticeService.getCommentList(commentsDTO);
+		List<CommentsDTO> ar = noticeService.getCommentList(commentsDTO, pager);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("comments", ar);
+		mv.addObject("pager", pager);
 		mv.setViewName("common/ajaxList");
 		return mv;
 	}

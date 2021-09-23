@@ -1,6 +1,9 @@
 package com.iu.s4.board.notice;
 
 import java.util.List;
+import java.util.Map;
+
+import javax.crypto.Mac;
 
 import org.apache.ibatis.jdbc.SQL;
 import org.apache.ibatis.session.SqlSession;
@@ -20,8 +23,12 @@ public class NoticeDAO implements BoardDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE="com.iu.s4.board.notice.NoticeDAO.";
 
-	public List<CommentsDTO> getCommentList(CommentsDTO commentsDTO)throws Exception{
-		return sqlSession.selectList(NAMESPACE+"getCommentList", commentsDTO);
+	public Long getCommentCount(CommentsDTO commentsDTO)throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"getCommentCount", commentsDTO);
+	}
+	
+	public List<CommentsDTO> getCommentList(Map<String, Object> map)throws Exception{
+		return sqlSession.selectList(NAMESPACE+"getCommentList", map);
 	}
 	
 	//BoardDAO선언하고 오버라이딩

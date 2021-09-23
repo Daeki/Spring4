@@ -153,7 +153,9 @@ public class Pager {
 	}
 
 	public Long getPerPage() {
-		this.perPage=10L;
+		if(this.perPage==null || this.perPage==0) {
+			this.perPage=10L;
+		}
 		
 		return perPage;
 	}
