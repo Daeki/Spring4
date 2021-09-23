@@ -5,9 +5,12 @@
   
   <mapper namespace="com.iu.s4.board.notice.NoticeDAO">
   	<select id="getCommentList" parameterType="CommentsDTO" resultType="CommentsDTO">
-  		select * from comments
-  		where board=#{board} and num=#{num}
-  		order by commentnum desc
+	  	SELECT * FROM	
+	  		(SELECT rownum R, C.* from
+		  		(select * from comments
+		  		where board=#{board} and num=#{num}
+		  		order by commentnum desc) C)
+		WHERE R between 1 and 5  		
   	</select>
   
   	<insert id="setComment" parameterType="CommentsDTO">

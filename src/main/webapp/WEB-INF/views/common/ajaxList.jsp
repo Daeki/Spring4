@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<table>
+<table class="table table-dark table-striped">
 
 <c:forEach items="${comments}" var="comment">
 	<tr>

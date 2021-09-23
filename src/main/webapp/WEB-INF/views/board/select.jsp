@@ -33,7 +33,7 @@
 	
 	<hr>
 	<!-- comment list -->
-	<div id="commentList">
+	<div id="commentList" data-board-num="${dto.num}">
 		
 	
 	</div>
@@ -74,10 +74,11 @@
 	
 	
 	function getCommentList() {
-		
+		let num = $("#commentList").attr("data-board-num");
 		$.ajax({
 			type: "GET",
 			url : "./getCommentList",
+			data: {num:num},
 			success: function(result){
 				result=result.trim();
 				$("#commentList").html(result);
@@ -98,7 +99,7 @@
 			console.log(result.trim());
 			
 			$("#contents").val('');
-			
+			getCommentList();
 			
 		});
 		
