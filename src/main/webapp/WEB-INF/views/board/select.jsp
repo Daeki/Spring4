@@ -10,9 +10,9 @@
 </head>
 <body>
 <c:import url="../temp/boot_nav.jsp"></c:import>
-	<h1>${board}Select Page</h1>
 	
-	<div class="container-fluid">
+	<div class="container-fluid col-md-8">
+		<h1>${board}Select Page</h1>
 		<h3>NUM:${dto.num}</h3>
 		<h3>Title:${dto.title}</h3>
 		
@@ -68,6 +68,10 @@
 		let contents = $("#contents").val();
 		$.post('./comment', {num:'${dto.num}', writer:writer, contents:contents}, function(result){
 			console.log(result.trim());
+			
+			$("#contents").val('');
+			
+			
 		});
 		
 	});
