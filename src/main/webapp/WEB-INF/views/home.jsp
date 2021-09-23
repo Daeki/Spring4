@@ -6,6 +6,13 @@
 	<title>Home</title>
 	
 <c:import url="./temp/boot_head.jsp"></c:import>
+<style type="text/css">
+	.footer {
+		width:100%;
+		height: 300px;
+		background-color: gray;
+	}
+</style>
 </head>
 <body>
 <c:import url="./temp/boot_nav.jsp"></c:import>
@@ -29,6 +36,8 @@
 	
 	<h1 id="ar"></h1>
 	<button id="btn">CLICK</button>
+<c:import url="./temp/boot_footer.jsp"></c:import>
+
 	
 	<script type="text/javascript">
 

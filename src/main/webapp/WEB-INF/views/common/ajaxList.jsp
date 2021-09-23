@@ -10,6 +10,11 @@
 		<td>${comment.contents}</td>
 		<td>${comment.writer}</td>
 		<td>${comment.regDate}</td>
+		<td>
+		<c:if test="${member.id eq comment.writer}">
+			<button class="commentDel" data-comment-del="${comment.commentNum}">DEL</button>
+		</c:if>
+		</td>
 	</tr>
 
 </c:forEach>

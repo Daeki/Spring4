@@ -11,6 +11,8 @@
 	.more {
 		cursor: pointer;
 	}
+	
+
 </style>
 </head>
 <body>
@@ -74,8 +76,20 @@
 	</c:if>
 	</div>
 
+<c:import url="../temp/boot_footer.jsp"></c:import>
+
+
+
 <script type="text/javascript">
 	getCommentList(1);
+	
+	//Del click event
+	$("#commentList").on("click", ".commentDel", function() {
+		let commentNum = $(this).attr("data-comment-del");
+		console.log(commentNum);
+		//url ./commentDel
+	});
+	
 	
 	$("#commentList").on("click", ".more", function(){
 		//data-comment-pn 값을 출력
