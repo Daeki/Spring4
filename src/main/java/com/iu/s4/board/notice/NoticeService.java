@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.iu.s4.board.BoardDTO;
 import com.iu.s4.board.BoardFilesDTO;
 import com.iu.s4.board.BoardService;
+import com.iu.s4.board.CommentsDTO;
 import com.iu.s4.util.FileManager;
 import com.iu.s4.util.Pager;
 
@@ -25,6 +26,12 @@ public class NoticeService implements BoardService {
 	@Autowired
 	private FileManager fileManager;
 	
+	//BoardService선언하고 오버라이딩
+	public int setComment(CommentsDTO commentsDTO)throws Exception{
+		return noticeDAO.setComment(commentsDTO);
+	}
+
+	//BoardService선언하고 오버라이딩
 	public List<BoardFilesDTO> getFiles(BoardDTO boardDTO)throws Exception{
 		return noticeDAO.getFiles(boardDTO);
 	}

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.iu.s4.board.BoardDAO;
 import com.iu.s4.board.BoardDTO;
 import com.iu.s4.board.BoardFilesDTO;
+import com.iu.s4.board.CommentsDTO;
 import com.iu.s4.util.Pager;
 
 @Repository
@@ -19,6 +20,11 @@ public class NoticeDAO implements BoardDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE="com.iu.s4.board.notice.NoticeDAO.";
 
+	//BoardDAO선언하고 오버라이딩
+	public int setComment(CommentsDTO commentsDTO)throws Exception{
+		return sqlSession.insert(NAMESPACE+"setComment", commentsDTO);
+	}
+	//BoardDAO선언하고 오버라이딩	
 	public List<BoardFilesDTO> getFiles(BoardDTO boardDTO)throws Exception{
 		return sqlSession.selectList(NAMESPACE+"getFiles", boardDTO);
 	}

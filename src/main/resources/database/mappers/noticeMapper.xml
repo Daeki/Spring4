@@ -4,6 +4,11 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.iu.s4.board.notice.NoticeDAO">
+  	<insert id="setComment" parameterType="CommentsDTO">
+  		insert into comments values 
+  		(comments_seq.nextval,#{num}, #{writer}, #{contents}, sysdate, #{board})
+  	</insert>
+  
   	<insert id="setFile" parameterType="BoardFilesDTO">
   		insert into noticeFiles (fileNum, num, fileName, oriName)
   		values(files_seq.nextval, #{num}, #{fileName}, #{oriName})
