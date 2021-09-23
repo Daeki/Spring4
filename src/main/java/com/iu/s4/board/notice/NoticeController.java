@@ -27,6 +27,15 @@ public class NoticeController {
 	public String getBoard() {
 		return "notice";
 	}
+	@GetMapping("getCommentList")
+	public ModelAndView getCommentList(CommentsDTO commentsDTO)throws Exception{
+		commentsDTO.setBoard("N");
+		List<CommentsDTO> ar = noticeService.getCommentList(commentsDTO);
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("comments", ar);
+		mv.setViewName("common/ajaxList");
+		return mv;
+	}
 	
 	//setComment
 	@PostMapping("comment")
@@ -75,6 +84,8 @@ public class NoticeController {
 		ModelAndView mv = new ModelAndView();
 		boardDTO = noticeService.getSelect(boardDTO);
 		List<BoardFilesDTO> ar = noticeService.getFiles(boardDTO);
+//		List<CommentsDTO> comments = noticeService.getCommentList();
+//		mv.addObject("comments", comments);
 //		mv.addObject("fileList", ar);
 		mv.addObject("dto", boardDTO);
 		mv.setViewName("board/select");

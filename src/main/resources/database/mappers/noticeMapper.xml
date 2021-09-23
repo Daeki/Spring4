@@ -4,7 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.iu.s4.board.notice.NoticeDAO">
-  	<select id="getCommentList" resultType="CommentsDTO">
+  	<select id="getCommentList" parameterType="CommentsDTO" resultType="CommentsDTO">
   		select * from comments
   		where board=#{board} and num=#{num}
   		order by commentnum desc

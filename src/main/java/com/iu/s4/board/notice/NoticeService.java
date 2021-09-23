@@ -26,6 +26,10 @@ public class NoticeService implements BoardService {
 	@Autowired
 	private FileManager fileManager;
 	
+	public List<CommentsDTO> getCommentList(CommentsDTO commentsDTO)throws Exception{
+		return noticeDAO.getCommentList(commentsDTO);
+	}
+	
 	//BoardService선언하고 오버라이딩
 	public int setComment(CommentsDTO commentsDTO)throws Exception{
 		return noticeDAO.setComment(commentsDTO);

@@ -32,6 +32,13 @@
 	</c:forEach>
 	
 	<hr>
+	<!-- comment list -->
+	<div id="commentList">
+		
+	
+	</div>
+	
+	
 	<div>
 		<div class="mb-3">
 		    <label for="writer" class="form-label">Writer</label>
@@ -63,6 +70,27 @@
 	</div>
 
 <script type="text/javascript">
+	getCommentList();
+	
+	
+	function getCommentList() {
+		
+		$.ajax({
+			type: "GET",
+			url : "./getCommentList",
+			success: function(result){
+				result=result.trim();
+				$("#commentList").html(result);
+			},
+			error:function(xhr, status, error){
+				console.log(error);
+			}
+			
+		});
+		
+	}
+
+
 	$("#comment").click(function(){
 		let writer = $("#writer").val();
 		let contents = $("#contents").val();
