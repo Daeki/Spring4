@@ -19,7 +19,7 @@
 <c:import url="../temp/boot_nav.jsp"></c:import>
 	
 	<div class="container-fluid col-md-8">
-		<h1>${board}Select Page</h1>
+		<h1>${board}Select Page 1</h1>
 		<h3>NUM:${dto.num}</h3>
 		<h3>Title:${dto.title}</h3>
 		
@@ -82,6 +82,18 @@
 
 <script type="text/javascript">
 	getCommentList(1);
+	
+	//update
+	$("#commentList").on("click", ".commentUpdate", function() {
+		console.log('update');
+		let num = $(this).attr("data-comment-update");
+		let content= $("#content"+num).html();
+		let ta = '<textarea class="form-control" cols=""  name="contents" id="contents" rows="6">';
+		ta = ta+content.trim() +'</textarea>';
+		 $("#content"+num).html(ta);
+		
+		
+	});
 	
 	//Del click event
 	$("#commentList").on("click", ".commentDel", function() {
