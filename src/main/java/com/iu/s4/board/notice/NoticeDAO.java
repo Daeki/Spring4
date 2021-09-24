@@ -23,6 +23,10 @@ public class NoticeDAO implements BoardDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE="com.iu.s4.board.notice.NoticeDAO.";
 
+	public int setCommentDelete(CommentsDTO commentsDTO)throws Exception{
+		return sqlSession.delete(NAMESPACE+"setCommentDelete", commentsDTO);
+	}
+	
 	public Long getCommentCount(CommentsDTO commentsDTO)throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"getCommentCount", commentsDTO);
 	}

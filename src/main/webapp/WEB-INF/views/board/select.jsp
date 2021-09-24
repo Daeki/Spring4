@@ -87,7 +87,30 @@
 	$("#commentList").on("click", ".commentDel", function() {
 		let commentNum = $(this).attr("data-comment-del");
 		console.log(commentNum);
-		//url ./commentDel
+		$.ajax({
+			type:"POST",
+			url : "./commentDel",
+			data: {
+				commentNum:commentNum
+			},
+			success:function(result){
+				result=result.trim();
+				
+				if(result>0){
+					alert("삭제성공");
+					getCommentList(1);
+				}else {
+					alert("삭제실패");
+				}
+				
+			},
+			error:function(){
+				alert('삭제에 실패');
+			}
+			
+		});
+		
+		
 	});
 	
 	
@@ -105,7 +128,8 @@
 			url : "./getCommentList",
 			data: {
 				num:num,
-				pn : pageNumber	
+				pn : pageNumber
+				
 			},
 			success: function(result){
 				result=result.trim();

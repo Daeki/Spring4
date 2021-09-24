@@ -27,6 +27,16 @@ public class NoticeController {
 	public String getBoard() {
 		return "notice";
 	}
+	
+	@PostMapping("commentDel")
+	public ModelAndView setCommentDelete(CommentsDTO commentsDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = noticeService.setCommentDelete(commentsDTO);
+		mv.setViewName("common/ajaxResult");
+		mv.addObject("result", result);
+		return mv;
+	}
+	
 	@GetMapping("getCommentList")
 	public ModelAndView getCommentList(CommentsDTO commentsDTO, Pager pager)throws Exception{
 		commentsDTO.setBoard("N");

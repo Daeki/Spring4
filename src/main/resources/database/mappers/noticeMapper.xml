@@ -4,6 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.iu.s4.board.notice.NoticeDAO">
+  	<delete id="setCommentDelete" parameterType="CommentsDTO">
+  		delete comments where commentNum=#{commentNum}
+  	</delete>
+  
   	<select id="getCommentCount" parameterType="CommentsDTO" resultType="Long">
   		SELECT COUNT(commentNum) FROM COMMENTS
   		WHERE board=#{board} and num=#{num}
