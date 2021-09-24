@@ -90,6 +90,8 @@
 		let content= $("#content"+num).html();
 		let ta = '<textarea class="form-control" cols=""  name="contents" id="contents" rows="6">';
 		ta = ta+content.trim() +'</textarea>';
+		ta = ta + '<button type="button" id="" class="btn btn-primary">update</button>';
+		ta = ta + '<button type="button" id="" class="btn btn-primary">Cancel</button>';
 		 $("#content"+num).html(ta);
 		
 		
