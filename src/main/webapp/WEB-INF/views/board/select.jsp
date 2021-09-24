@@ -87,15 +87,24 @@
 	$("#commentList").on("click", ".commentUpdate", function() {
 		console.log('update');
 		let num = $(this).attr("data-comment-update");
-		let content= $("#content"+num).html();
+		let content= $("#content"+num).text().trim();
+		$("#content"+num).children().css('display', 'none');
 		let ta = '<textarea class="form-control" cols=""  name="contents" id="contents" rows="6">';
 		ta = ta+content.trim() +'</textarea>';
 		ta = ta + '<button type="button" id="" class="btn btn-primary">update</button>';
-		ta = ta + '<button type="button" id="" class="btn btn-primary">Cancel</button>';
-		 $("#content"+num).html(ta);
+		ta = ta + '<button type="button" id="" class="btn btn-danger can">Cancel</button>';
+		 $("#content"+num).append(ta);
 		
 		
 	});
+	
+	//cancel
+	$("#commentList").on('click', ".can", function() {
+		$(this).parent().children('div').css('display', 'block');
+		$(this).parent().children('textarea').remove();
+		$(this).parent().children('button').remove();
+	})
+	
 	
 	//Del click event
 	$("#commentList").on("click", ".commentDel", function() {

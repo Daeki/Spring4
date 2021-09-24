@@ -9,7 +9,9 @@
 		<td>${comment.commentNum}</td>
 		<td id="content${comment.commentNum}">
 		  	<%-- <textarea class="form-control" cols=""  name="contents" id="" rows="" readonly="readonly">${comment.contents}</textarea> --%>
-		  	${comment.contents}
+		  	<div>
+		  		${comment.contents}
+		  	</div>
 		</td>
 		<td>${comment.writer}</td>
 		<td>${comment.regDate}</td>
