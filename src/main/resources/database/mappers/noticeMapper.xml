@@ -30,6 +30,10 @@
   		insert into comments values 
   		(comments_seq.nextval,#{num}, #{writer}, #{contents}, sysdate, #{board})
   	</insert>
+  	
+  	<delete id="setFileDelete" parameterType="BoardFilesDTO">
+  		delete noticeFiles where fileNum=#{fileNum}
+  	</delete>
   
   	<insert id="setFile" parameterType="BoardFilesDTO">
   		insert into noticeFiles (fileNum, num, fileName, oriName)
