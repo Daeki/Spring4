@@ -91,10 +91,42 @@
 		$("#content"+num).children().css('display', 'none');
 		let ta = '<textarea class="form-control" cols=""  name="contents" id="contents" rows="6">';
 		ta = ta+content.trim() +'</textarea>';
-		ta = ta + '<button type="button" id="" class="btn btn-primary">update</button>';
+		ta = ta + '<button type="button" id="" class="btn btn-primary up">update</button>';
 		ta = ta + '<button type="button" id="" class="btn btn-danger can">Cancel</button>';
 		 $("#content"+num).append(ta);
 		
+		
+	});
+	
+	//update
+	$("#commentList").on('click', '.up', function() {
+		let contents = $(this).prev().val();
+		let cn = $(this).parent().prev().text().trim();
+		let selector=$(this);
+		$.ajax({
+			type:"POST",
+			url: "./commentUpdate",
+			data:{
+				commentNum:cn,
+				contents:contents
+			},
+			success:function(result){
+				if(result.trim()>0){
+					alert('수정 성공');
+					//getCommentList(1);
+					selector.parent().children('div').text(contents);
+					selector.parent().children('div').css('display', 'block');
+					selector.parent().children('textarea').remove();
+					selector.parent().children('button').remove();
+				}else {
+					alert('수정 실패');
+				}
+			},
+			error:function(){
+				alert('수정 실패');
+			}
+			
+		});
 		
 	});
 	

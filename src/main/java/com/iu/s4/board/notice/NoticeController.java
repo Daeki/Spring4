@@ -28,6 +28,17 @@ public class NoticeController {
 		return "notice";
 	}
 	
+	@PostMapping("commentUpdate")
+	public ModelAndView setCommentUpdate(CommentsDTO commentsDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = noticeService.setCommentUpdate(commentsDTO);
+		
+		mv.setViewName("common/ajaxResult");
+		mv.addObject("result", result);
+		
+		return mv;
+	}
+	
 	@PostMapping("commentDel")
 	public ModelAndView setCommentDelete(CommentsDTO commentsDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();

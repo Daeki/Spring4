@@ -27,6 +27,10 @@ public class NoticeService implements BoardService {
 	@Autowired
 	private FileManager fileManager;
 	
+	public int setCommentUpdate(CommentsDTO commentsDTO)throws Exception{
+		return noticeDAO.setCommentUpdate(commentsDTO);
+	}
+	
 	public int setCommentDelete(CommentsDTO commentsDTO)throws Exception{
 		return noticeDAO.setCommentDelete(commentsDTO);
 	}

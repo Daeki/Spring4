@@ -4,6 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.iu.s4.board.notice.NoticeDAO">
+  	<update id="setCommentUpdate" parameterType="CommentsDTO">
+  		update comments set contents=#{contents} where commentNum=#{commentNum}
+  	</update>
+  
   	<delete id="setCommentDelete" parameterType="CommentsDTO">
   		delete comments where commentNum=#{commentNum}
   	</delete>
