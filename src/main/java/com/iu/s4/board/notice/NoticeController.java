@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,6 +20,7 @@ import com.iu.s4.board.CommentsDTO;
 import com.iu.s4.util.Pager;
 
 @Controller
+//@RestController
 @RequestMapping("/notice/**")
 public class NoticeController {
 	@Autowired
@@ -49,27 +52,31 @@ public class NoticeController {
 	}
 	
 	@GetMapping("getCommentList")
-	public ModelAndView getCommentList(CommentsDTO commentsDTO, Pager pager)throws Exception{
+	@ResponseBody
+	public List<CommentsDTO> getCommentList(CommentsDTO commentsDTO, Pager pager)throws Exception{
 		commentsDTO.setBoard("N");
 		List<CommentsDTO> ar = noticeService.getCommentList(commentsDTO, pager);
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("comments", ar);
-		mv.addObject("pager", pager);
-		mv.setViewName("common/ajaxList");
-		return mv;
+		//mv.addObject("comments", ar);
+		//mv.addObject("pager", pager);
+		//mv.setViewName("common/ajaxList");
+		return ar;
 	}
 	
 	//setComment
 	@PostMapping("comment")
-	public ModelAndView setComment(CommentsDTO commentsDTO)throws Exception{
+	@ResponseBody
+	public int setComment(CommentsDTO commentsDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		commentsDTO.setBoard("N");
 		
 		int result = noticeService.setComment(commentsDTO);
+//		String json ="{";
+//		json = json+"result:"+"\""+result+"\"}";
 		mv.setViewName("common/ajaxResult");
 		mv.addObject("result", result);
 		
-		return mv;
+		return result;
 		
 	}
 	

@@ -110,6 +110,7 @@
 				commentNum:cn,
 				contents:contents
 			},
+			
 			success:function(result){
 				if(result.trim()>0){
 					alert('수정 성공');
@@ -187,7 +188,8 @@
 				
 			},
 			success: function(result){
-				result=result.trim();
+				//result=result.trim();
+				console.log(result);
 				$("#commentList").html(result);
 			},
 			error:function(xhr, status, error){
@@ -203,7 +205,8 @@
 		let writer = $("#writer").val();
 		let contents = $("#contents").val();
 		$.post('./comment', {num:'${dto.num}', writer:writer, contents:contents}, function(result){
-			console.log(result.trim());
+			alert(result);
+			console.log(result);
 			
 			$("#contents").val('');
 			getCommentList();
