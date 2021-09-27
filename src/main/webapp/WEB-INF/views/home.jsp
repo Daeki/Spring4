@@ -34,21 +34,57 @@
 
 	<h1>Member Branch</h1>
 	
-	<h1 id="ar"></h1>
 	<button id="btn">CLICK</button>
-<c:import url="./temp/boot_footer.jsp"></c:import>
-
+	<div>
+		<table id="r" class="table table-hover">
+			<tr>
+				<td>ID</td>
+				<td>TITLE</td>
+				<td>USERID</td>
+			</tr>
+			
+			
+		</table>
+		
+	</div>
 	
 	<script type="text/javascript">
+		$("#btn").click(function() {
+			$.ajax({
+				type:"GET",
+				url:"http://jsonplaceholder.typicode.com/posts",
+				
+				success:function(result){
+					alert(result);
+					console.log(result);
+					console.log(result[0]);
+					console.log(result[0].title);
+					
+					for(v1 of result){
+						let v = "<tr>";
+						v= v+ "<td>";
+						v= v+ v1.id;
+						v= v+"</td>";
+						v= v+"<td>";
+						v= v+v1.title;
+						v= v+"</td>";
+						v= v+"<td>";
+						v= v+v1.userId;
+						v= v+"</td>";
+						v= v+"</tr>";
+						$("#r").append(v);
+					}
+					
+					
+					
 
-		$("#btn").click(function(){
-			$.get("./ajax/t1?num=1", function (result) {
-				console.log(result.trim());
-				$('#ar').html(result.trim());
+				}
+				
 			});
-		});	
-	
+		});
 	</script>
+	
+
 
 </body>
 </html>
